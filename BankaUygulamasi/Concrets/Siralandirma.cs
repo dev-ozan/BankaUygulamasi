@@ -10,6 +10,7 @@ namespace BankaUygulamasi.Concrets
 {
     public class Siralandirma : MusterilerListesi
     {
+        Musteri m1 = new Musteri(MusteriTipi.GiseMusterisi, 15, 519);
         int SiraNo = 1;
         int Vip = 0;
         int Gise = 0;
@@ -52,6 +53,7 @@ namespace BankaUygulamasi.Concrets
 
             }
 
+
             KontrolEt(yeniMusteri);
 
         }
@@ -68,10 +70,25 @@ namespace BankaUygulamasi.Concrets
             {
                 Console.WriteLine("Başarılı Giriş yaptınız.");
             }
+
             YeniMusteriListesi.Add(yeniMusteri);
+            for (int i = 0; i < YeniMusteriListesi.Count; i++)
+            {
+                if (YeniMusteriListesi[i].MusteriTipi == MusteriTipi.VIP && YeniMusteriListesi[i+1].MusteriTipi == MusteriTipi.Bireysel || YeniMusteriListesi[i + 1].MusteriTipi == MusteriTipi.Bireysel)
+                {
+                    int gecici = m1.SiraNumarasi;
+
+                    m1.SiraNumarasi = yeniMusteri.SiraNumarasi;
+                    yeniMusteri.SiraNumarasi = gecici;
+                }
+            }
+            
+
 
 
         }
+
+
 
     }
 }
