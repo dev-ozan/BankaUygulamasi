@@ -13,12 +13,14 @@ namespace BankaUygulamasi.Concrets
         public int SiraNumarasi { get; set; }
         public int TCNumarasi { get; set; }
 
-        public Musteri(MusteriTipi musteriTipi, int siraNumarasi, int tcNumarasi)
+        public Musteri(MusteriTipi musteriTipi,  int tcNumarasi)
         {
             MusteriTipi = musteriTipi;
-            SiraNumarasi = siraNumarasi;
+            
             TCNumarasi = tcNumarasi;
         }
+
+        
 
     }
 }
