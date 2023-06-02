@@ -11,23 +11,24 @@ namespace BankaFormKismi
         List<Musteri> YeniMusteriListesi = new List<Musteri>();
 
 
+
+
         public Form1()
         {
             InitializeComponent();
             comboBox1.Items.AddRange(Enum.GetNames(typeof(MusteriTipi)));
 
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             Enum.TryParse(comboBox1.SelectedItem.ToString(), out MusteriTipi tipi);
-
             m1 = new CustomMusteri(tipi, Convert.ToInt32(txtTc.Text));
             s1.MusterileriSiralandir(m1);
+            listBox1.Items.AddRange(MusterilerListesi.TumMusteriler.ToArray());
 
-            listBox1.Items.Add(m1);
-            YeniMusteriListesi.Add(m1);
+
 
 
         }
@@ -36,11 +37,10 @@ namespace BankaFormKismi
         {
             listBox1.Items.Clear();
 
-            s1.MusterileriSiralandir(m1);
-            foreach (Musteri item in YeniMusteriListesi)
-            {
-                listBox1.Items.Add(item);
-            }
+            MusterilerListesi.TumMusteriler=MusterilerListesi.TumMusteriler.OrderBy(x => x.SiraNumarasi).ToList();
+            listBox1.Items.AddRange(MusterilerListesi.TumMusteriler.ToArray());
+            listBox1.Update();
+            listBox1.Refresh();
 
         }
     }

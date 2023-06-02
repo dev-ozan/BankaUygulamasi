@@ -15,7 +15,7 @@ namespace BankaUygulamasi.Concrets
         }
         public override string ToString()
         {
-            return $"{TCNumarasi} {SiraNumarasi} {MusteriTipi}";
+            return $" Tc Numarası : {TCNumarasi} Sıra Numarası : {SiraNumarasi}  {MusteriTipi}";
         }
     }
 }
