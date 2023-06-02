@@ -9,7 +9,7 @@ namespace BankaUygulamasi.Concrets
     public class MusterilerListesi
     {
         static public List<Musteri> TumMusteriler { get; set; } = new();
-        public List<Musteri> VipMusteriler { get; set; } = new();
+        static public List<Musteri> VipMusteriler { get; set; } = new();
         public List<Musteri> GiseMusterileri { get; set; } = new();
         public List<Musteri> BireyselMusteriler { get; set; } = new();
 

@@ -10,13 +10,16 @@ namespace BankaUygulamasi.Concrets
 {
     public class Siralandirma : MusterilerListesi
     {
+        static int x = TumMusteriler.FindAll(x => x.MusteriTipi == MusteriTipi.VIP).Count;
 
-  
-        int SiraNo = 1000;
-        int VipSiraNo = 1;
 
+        static int SiraNo = 1000 + TumMusteriler.Count - 1;
+        
+        static int VipSiraNo = 1 + x - 1;
         public void MusterileriSiralandir(Musteri yeniMusteri)
         {
+            
+            
             if (yeniMusteri.MusteriTipi == MusteriTipi.VIP && VipMusteriler.Count == 0)
             {
                 yeniMusteri.SiraNumarasi = VipSiraNo;

@@ -1,0 +1,1 @@
+[{"MusteriTipi":2,"SiraNumarasi":0,"TCNumarasi":3},{"MusteriTipi":2,"SiraNumarasi":1,"TCNumarasi":5},{"MusteriTipi":0,"SiraNumarasi":999,"TCNumarasi":1},{"MusteriTipi":1,"SiraNumarasi":1000,"TCNumarasi":2},{"MusteriTipi":0,"SiraNumarasi":1001,"TCNumarasi":4}]
